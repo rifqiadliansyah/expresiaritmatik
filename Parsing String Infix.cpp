@@ -1,3 +1,7 @@
+// 1.Rifqi Adliansyah - 2017051003 
+// 2.M Hanif Pratama - 2017051040 
+// 3.Yogi Andaru - 2017051062
+// Kelas B
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -6,7 +10,7 @@ int main()
 {
     string string1, string2;
     getline(cin, string1);
-    for (int i = 0; i < string1.length(); i++)
+    for (int i = 0; i < (int)string1.length(); i++)
     { //seleksi index string
         if (isdigit(string1[i]))
         {
@@ -35,7 +39,7 @@ int main()
             {
                 string2 += "1 * ";
             }
-            else if (i == (string1.length()) - 1)
+            else if (i == ((int)string1.length()) - 1)
             {
                 string2 += "";
             }
@@ -45,6 +49,6 @@ int main()
             }
         }
     }
-    cout << string2 << endl;
+    cout <<"Print : "<< string2 << endl;
     return 0;
 }

@@ -28,8 +28,8 @@ int prioritas(char a){
 }
 
 int main(){
-    string string1,string2,hasil,lele; ///string1==input, string2==operasikan
-    getline(cin,string1);// lele
+    string string1,string2,hasil,tampung; ///string1==input, string2==operasikan
+    getline(cin,string1);// tampung
     char tmp;
     stack <char> st;
     stack <char> evaluate;
@@ -113,31 +113,31 @@ int main(){
     }
     for(int i=0;i<(int)hasil.length();i++){
         if(isdigit(hasil[i])){
-            lele+=hasil[i];
+            tampung+=hasil[i];
             if(!(isdigit(hasil[i+1]))){
-                lele+=" ";
+                tampung+=" ";
             }
         }else if(!(isdigit(hasil[i])) && hasil[i]!= ' '){
-            lele+=hasil[i];
+            tampung+=hasil[i];
             if (i==0&&isdigit(hasil[i+1])&&hasil[i]=='-'){
-                lele+="";
+                tampung+="";
             }
             else if(hasil[i]=='-'&&hasil[i+1]=='('&&isdigit(hasil[i-2])){
-                lele+="1 * ";
+                tampung+="1 * ";
             }else if(hasil[i]=='-'&&isdigit(hasil[i+1])&&!(isdigit(hasil[i-1]))){
-                lele+="";
+                tampung+="";
             }
             else if(hasil[i]=='-'&&hasil[i-2]!=')'&&hasil[i-1]!=')'&&hasil[i+1]=='('&&!(isdigit(hasil[3-2]))){
-                lele+="1 * ";
+                tampung+="1 * ";
             }else if(i==((int)hasil.length())-1){
-                lele+="";
+                tampung+="";
             }
             else{
-                lele+=" ";
+                tampung+=" ";
             }
         }
 
     }
-    cout<<"Print : "<<lele<<endl;
+    cout<<"Print : "<<tampung<<endl;
     return 0;
 }
